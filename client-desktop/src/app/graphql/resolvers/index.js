@@ -9,11 +9,11 @@ const resolvers = {
             body
           }
         }
-      `
+      `;
       cache.writeData({ query, data: { currentNote: body } });
       return null;
     }
   }
-}
+};
 
 export default resolvers;

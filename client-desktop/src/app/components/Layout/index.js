@@ -1,16 +1,16 @@
-import React, { Component, Fragment } from "react";
-import posed, { PoseGroup } from "react-pose";
+import React, { Component, Fragment } from 'react';
+import posed, { PoseGroup } from 'react-pose';
 import styled from 'react-emotion';
 
 const Container = posed.div({
   oneColumnLayout: {
-    display: "flex",
+    display: 'flex'
   },
   twoColumnLayout: {
-    display: "flex",
+    display: 'flex'
   },
   threeColumnLayout: {
-    display: "flex",
+    display: 'flex'
   }
 });
 
@@ -21,33 +21,31 @@ const SidebarPane = posed.div({
     transition: {
       default: {
         duration: 150,
-        ease:'linear'
+        ease: 'linear'
       }
     }
   },
   twoColumnLayout: {
-    width: "150px",
-    x: 0,   
+    width: '150px',
+    x: 0,
     transition: {
       default: {
         duration: 150,
-        ease:'linear'
+        ease: 'linear'
       }
-    } 
+    }
   },
   threeColumnLayout: {
-    width: "150px",
-    x: 0,    
+    width: '150px',
+    x: 0,
     transition: {
       default: {
         duration: 150,
-        ease:'linear'
+        ease: 'linear'
       }
     }
   }
 });
-
-
 
 const NoteListPane = posed.div({
   oneColumnLayout: {
@@ -56,12 +54,12 @@ const NoteListPane = posed.div({
     transition: {
       default: {
         duration: 150,
-        ease:'linear'
+        ease: 'linear'
       }
     }
   },
   twoColumnLayout: {
-    width: 88 + "vw",
+    width: 88 + 'vw',
     x: 0,
     transition: {
       default: {
@@ -70,26 +68,24 @@ const NoteListPane = posed.div({
     }
   },
   threeColumnLayout: {
-    width: "250px",
+    width: '250px',
     x: 0,
     transition: {
       default: {
         duration: 150,
-        ease:'linear'
+        ease: 'linear'
       }
     }
   }
 });
 
-
-
 const EditorPane = posed.div({
   oneColumnLayout: {
-    width: 100 + "vw",
+    width: 100 + 'vw',
     transition: {
       default: {
         duration: 150,
-        ease:'linear'
+        ease: 'linear'
       }
     }
   },
@@ -98,23 +94,23 @@ const EditorPane = posed.div({
     transition: {
       default: {
         duration: 150,
-        ease:'linear'
+        ease: 'linear'
       }
     }
   },
   threeColumnLayout: {
-    width: 68 + "vw",
+    width: 68 + 'vw',
     transition: {
       default: {
         duration: 150,
-        ease:'linear'
+        ease: 'linear'
       }
     }
   }
 });
 
 const StyledSidebarPane = styled(SidebarPane)`
-  transition: all 0.3s linear
+  transition: all 0.3s linear;
 `;
 
 const StyledNoteListPane = styled(NoteListPane)`
@@ -122,7 +118,7 @@ const StyledNoteListPane = styled(NoteListPane)`
 `;
 
 const StyledEditorPane = styled(EditorPane)`
-  transition: all 0.3s linear
+  transition: all 0.3s linear;
 `;
 
 class Layout extends Component {
@@ -140,32 +136,26 @@ class Layout extends Component {
 
   render() {
     const { columns } = this.props;
-    let pose = "oneColumnLayout";
+    let pose = 'oneColumnLayout';
     if (columns === 2) {
-      pose = "twoColumnLayout";
+      pose = 'twoColumnLayout';
     }
     if (columns === 3) {
-      pose = "threeColumnLayout";
+      pose = 'threeColumnLayout';
     }
     return (
       <Container pose={pose}>
-  <StyledSidebarPane key={1}>
-  {this.renderTypeOf(Layout.Sidebar)}
-  </StyledSidebarPane>
-  <StyledNoteListPane key={2}>
-  {this.renderTypeOf(Layout.NoteList)}
-  </StyledNoteListPane>
-  <StyledEditorPane key={3}>
-  {this.renderTypeOf(Layout.Editor)}
-  </StyledEditorPane>
-  </Container>
-      );
-    }
+        <StyledSidebarPane key={1}>{this.renderTypeOf(Layout.Sidebar)}</StyledSidebarPane>
+        <StyledNoteListPane key={2}>{this.renderTypeOf(Layout.NoteList)}</StyledNoteListPane>
+        <StyledEditorPane key={3}>{this.renderTypeOf(Layout.Editor)}</StyledEditorPane>
+      </Container>
+    );
   }
-  
-  export default Layout;
-  
-  /* <Container pose={pose}>
+}
+
+export default Layout;
+
+/* <Container pose={pose}>
   <SidebarPane pose={pose} key={1}>
   {this.renderTypeOf(Layout.Sidebar)}
   </SidebarPane>
@@ -176,7 +166,7 @@ class Layout extends Component {
   {this.renderTypeOf(Layout.Editor)}
   </EditorPane>
   </Container> */
-  /* <Container pose={pose}>
+/* <Container pose={pose}>
   {pose === 'twoColumnLayout' && (
     <React.Fragment>
 

@@ -28,42 +28,50 @@ class App extends Component {
     return (
       <ThemeProvider theme={lightTheme}>
         <React.Fragment>
-        
           <button
             style={{
-              position: "absolute",
+              position: 'absolute',
               top: 0,
-              left: "90vw",
-              height: "50px"
+              left: '90vw',
+              height: '50px'
             }}
-            onClick={() => this.setState({ actualColumns: 1 })}>
+            onClick={() => this.setState({ actualColumns: 1 })}
+          >
             columns 1
           </button>
           <button
             style={{
-              position: "absolute",
+              position: 'absolute',
               top: 50,
-              left: "90vw",
-              height: "50px"
+              left: '90vw',
+              height: '50px'
             }}
-            onClick={() => this.setState({ actualColumns: 2 })}>
+            onClick={() => this.setState({ actualColumns: 2 })}
+          >
             columns 2
           </button>
           <button
             style={{
-              position: "absolute",
+              position: 'absolute',
               top: 100,
-              left: "90vw",
-              height: "50px"
+              left: '90vw',
+              height: '50px'
             }}
-            onClick={() => this.setState({ actualColumns: 3 })}>
+            onClick={() => this.setState({ actualColumns: 3 })}
+          >
             columns 3
           </button>
           <Layout columns={this.state.actualColumns}>
-          <Layout.Sidebar><Sidebar/></Layout.Sidebar>
-          <Layout.NoteList><NoteList/></Layout.NoteList>
-          <Layout.Editor><Editor/></Layout.Editor>
-        </Layout>
+            <Layout.Sidebar>
+              <Sidebar />
+            </Layout.Sidebar>
+            <Layout.NoteList>
+              <NoteList />
+            </Layout.NoteList>
+            <Layout.Editor>
+              <Editor />
+            </Layout.Editor>
+          </Layout>
         </React.Fragment>
       </ThemeProvider>
     );

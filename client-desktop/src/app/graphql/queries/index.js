@@ -13,7 +13,8 @@ const GET_NOTES_FROM_SERVER = gql`
         userName
       }
     }
-  }`;
+  }
+`;
 
 const GET_CURRENT_NOTE = gql`
   {
@@ -23,7 +24,4 @@ const GET_CURRENT_NOTE = gql`
   }
 `;
 
-export {
-  GET_NOTES_FROM_SERVER,
-  GET_CURRENT_NOTE,
-};
+export { GET_NOTES_FROM_SERVER, GET_CURRENT_NOTE };

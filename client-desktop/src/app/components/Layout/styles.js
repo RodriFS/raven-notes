@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import posed from 'react-pose'
+import posed from 'react-pose';
 
 const Container = styled('div')`
   width: 100vw;
@@ -7,10 +7,7 @@ const Container = styled('div')`
   display: flex;
 `;
 
-
-const Pane = posed.div({
-  
-})
+const Pane = posed.div({});
 
 const Pane = styled('div')`
   width: ${props => props.width};
