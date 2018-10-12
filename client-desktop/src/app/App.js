@@ -4,18 +4,19 @@ import { ThemeProvider } from 'emotion-theming';
 
 import './styles';
 
-import { P1, P2, P3, Buttons } from './styles';
-
 import Layout from './components/Layout';
 import Sidebar from './components/Sidebar';
 import NoteListStatefulContainer from './containers/NoteListStatefulContainer';
 import EditorStatefulContainer from './containers/EditorStatefulContainer';
+// import AppButtons from './components/Buttons/index';
+import { P1, P2, P3 } from './styles';
 
 const { ipcRenderer } = window.require('electron');
 
 class App extends Component {
   state = {
     loadedFile: '',
+    actualColumns: 3
   };
 
   constructor() {
@@ -37,9 +38,9 @@ class App extends Component {
     return (
       <ThemeProvider theme={lightTheme}>
         <React.Fragment>
-
-        <Buttons>
-          <P1 onClick={() => this.setState({ actualColumns: 1 })}>
+            {/* Change later */}
+            <div>
+            <P1 onClick={() => this.setState({ actualColumns: 1 })}>
             01
           </P1>
           <P2 onClick={() => this.setState({ actualColumns: 2 })}>
@@ -48,14 +49,16 @@ class App extends Component {
           <P3 onClick={() => this.setState({ actualColumns: 3 })}>
             03
           </P3>
-        </Buttons>
+          </div>
+            {/* End */}
 
 
           <Layout columns={this.state.actualColumns}>
           <Layout.Sidebar><Sidebar /></Layout.Sidebar>
           <Layout.NoteList><NoteListStatefulContainer /></Layout.NoteList>
           <Layout.Editor><EditorStatefulContainer /></Layout.Editor>
-        </Layout>
+          </Layout>
+
         </React.Fragment>
       </ThemeProvider>
     );

@@ -79,8 +79,6 @@ const NoteListPane = posed.div({
   }
 });
 
-
-
 const EditorPane = posed.div({
   oneColumnLayout: {
     width: 100 + "vw",
@@ -147,16 +145,18 @@ class Layout extends Component {
     }
     return (
       <Container pose={pose}>
-  <StyledSidebarPane key={1}>
-  {this.renderTypeOf(Layout.Sidebar)}
-  </StyledSidebarPane>
-  <StyledNoteListPane key={2}>
-  {this.renderTypeOf(Layout.NoteList)}
-  </StyledNoteListPane>
-  <StyledEditorPane key={3}>
-  {this.renderTypeOf(Layout.Editor)}
-  </StyledEditorPane>
-  </Container>
+        <StyledSidebarPane key={1}>
+        {this.renderTypeOf(Layout.Sidebar)}
+        </StyledSidebarPane>
+
+        <StyledNoteListPane key={2}>
+        {this.renderTypeOf(Layout.NoteList)}
+        </StyledNoteListPane>
+
+        <StyledEditorPane key={3}>
+        {this.renderTypeOf(Layout.Editor)}
+        </StyledEditorPane>
+      </Container>
       );
     }
   }
