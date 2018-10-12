@@ -8,7 +8,7 @@ import Layout from './components/Layout';
 import Sidebar from './components/Sidebar';
 import NoteListStatefulContainer from './containers/NoteListStatefulContainer';
 import EditorStatefulContainer from './containers/EditorStatefulContainer';
-// import AppButtons from './components/Buttons/index';
+import AppButtons from './components/Buttons/index';
 import { P1, P2, P3 } from './styles';
 
 const { ipcRenderer } = window.require('electron');
@@ -39,7 +39,7 @@ class App extends Component {
       <ThemeProvider theme={lightTheme}>
         <React.Fragment>
             {/* Change later */}
-            <div>
+            {/* <div>
             <P1 onClick={() => this.setState({ actualColumns: 1 })}>
             01
           </P1>
@@ -49,10 +49,10 @@ class App extends Component {
           <P3 onClick={() => this.setState({ actualColumns: 3 })}>
             03
           </P3>
-          </div>
+          </div> */}
             {/* End */}
 
-
+          <AppButtons />
           <Layout columns={this.state.actualColumns}>
           <Layout.Sidebar><Sidebar /></Layout.Sidebar>
           <Layout.NoteList><NoteListStatefulContainer /></Layout.NoteList>
