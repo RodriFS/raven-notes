@@ -25,11 +25,11 @@ class App extends Component {
       groups: [],
       displayNoteList: false,
       notes: []
-    }
+    };
     // When a new file is opened, load the file content
     ipcRenderer.on('new-file', (event, fileContent) => {
       this.setState({
-        loadedFile: fileContent,
+        loadedFile: fileContent
       });
     });
   }

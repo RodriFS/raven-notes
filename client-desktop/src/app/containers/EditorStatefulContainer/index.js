@@ -5,7 +5,6 @@ import { actions as editorActions, selectors as noteSelectors } from '../../redu
 import Editor from '../../components/Editor/index';
 
 class EditorStatefulContainer extends Component {
-
   render() {
     return (
       <Editor content={this.props.editorContent}
@@ -15,12 +14,15 @@ class EditorStatefulContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   editorContent: noteSelectors.getEditorContent(state)
-})
+});
 
 const mapDispatchToProps = {
   updateEditorContent: editorActions.updateEditorContent
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditorStatefulContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditorStatefulContainer);
