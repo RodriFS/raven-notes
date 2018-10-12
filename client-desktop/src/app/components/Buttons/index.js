@@ -9,13 +9,13 @@ class AppButtons extends Component {
   render() {
     return (
       <div>
-          <P1 onClick={() => this.props.layoutContent({ actualColumns: 1 })}>
+          <P1 onClick={() => this.props.layoutContent}>
             01
           </P1>
-          <P2 onClick={() => this.props.layoutContent({ actualColumns: 2 })}>
+          <P2 onClick={() => this.props.layoutContent}>
             02
           </P2>
-          <P3 onClick={() => this.props.layoutContent({ actualColumns: 3 })}>
+          <P3 onClick={() => this.props.layoutContent}>
             03
           </P3>
       </div>
